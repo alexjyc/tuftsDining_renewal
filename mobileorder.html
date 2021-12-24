@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tufts Dining</title>
+    <link rel="stylesheet" href="https://hnguye18.github.io/midterm/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        button {
+             border-radius: 50px; 
+             background-color: #04AA6D;
+             border: none;
+             color: #FFFFFF;
+             padding: 20px;
+             text-align: center;
+             text-decoration: none;
+             display: block;
+             font-size: 16px;
+             margin: auto;
+             top: 50%;
+        }
+        .flex-content {
+            display: flex;
+        }
+        .flex-content-child {
+            flex: 1;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 20px;
+            color: #000000;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href = "https://hnguye18.github.io/midterm/index.html">
+            <img src="dining-logo.svg">
+        </a>
+    </header>
+    <nav>
+        <div class="flex-container">
+            <div class="flex-child">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="flex-child">
+                <a href="ourteam.html">Our Team</a>
+            </div>
+            <div class="flex-child">
+                <a href="carm.html">Carmichael</a>
+            </div>
+            <div class="flex-child">
+                <a href="dewick.html">Dewick MacPhie</a>
+            </div>
+            <div class="flex-child">
+                <a href="mobileorder.html">Mobile Order</a>
+            </div>
+            <div class="flex-child">
+                <a href="map.html">Map</a>
+            </div>
+            <div class="flex-child">
+                <a href="nutrition.html">Nutrition</a>
+            </div>
+        </div>
+    </nav>
+    
+    <h1>Mobile Order</h1>
+    
+    <form>
+
+      <p>First Name: <input type="text"  name='fname' /></p>
+        <p>Last Name*:  <input type="text"  name='lname' /></p>
+        <p id = 'street'>Street: <input type="text"  id='streeti' /></p>
+        <p id = 'city'>City: <input type="text"  id='cityi' /></p>
+        <p>Phone*: <input type="text"  name='phone' /></p>
+        <p> 
+	        <input type="radio"  name="p_or_d" value = "pickup" onclick = "pickup()"/>Pickup  
+	        <input type="radio"  name='p_or_d' value = "delivery" onclick = "delivery()"/>Delivery
+        </p>
+        
+        <h2>Meal Pack: $12 flat!</h2>
+        <table border="0" cellpadding="3">
+            <tr>
+                <th>Protein</th>
+                <th>Carbohydrate</th>
+                <th>Vegetable/Fruit</th>
+                <th>Drink</th>
+            </tr>
+            <tr>
+                <td><input type = "radio" name = "protein">Garlic Herb-roasted Chicken</td>
+                <td><input type = "radio" name = "carb">Cilantro Lime Rice</td>
+                <td><input type = "radio" name = "veg">Caesar's Salad</td>
+                <td><input type = "radio" name = "drink">Chocolate Chip Whey Protein Shake</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" name = "protein">Pan-seared Filet Mignon</td>
+                <td><input type = "radio" name = "carb">Brown Rice</td>
+                <td><input type = "radio" name = "veg">Stir-Fried Morning Glory</td>
+                <td><input type = "radio" name = "drink">Spinach-Acai-Strawberry Blend</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" name = "protein">Baked Halibut with Paprika</td>
+                <td><input type = "radio" name = "carb">Mashed Potatoes</td>
+                <td><input type = "radio" name = "veg">Vegetarian Succotash</td>
+                <td><input type = "radio" name = "drink">Blue Gatorade</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" name = "protein">Butter Shrimp Scampi</td>
+                <td><input type = "radio" name = "carb">Home-made Fettucine</td>
+                <td><input type = "radio" name = "veg">Parmesan Asparagus</td>
+                <td><input type = "radio" name = "drink">Lemonade</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" name = "protein">Herb-roasted chicken</td>
+                <td></td>
+                <td><input type = "radio" name = "veg">Cauliflower Puree</td>
+                <td><input type = "radio" name = "drink">Mineral water</td>
+            </tr>
+  </table>
+
+    <script language = "javascript">       
+        function pickup() {
+            document.getElementById("city").style.display = "none";
+            document.getElementById("street").style.display = "none";
+            document.getElementById("cityi").style.display = "none";
+            document.getElementById("streeti").style.display = "none";
+        }
+
+        function delivery() {
+            document.getElementById("city").style.display = "block";
+            document.getElementById("street").style.display = "block";
+            document.getElementById("cityi").style.display = "block";
+            document.getElementById("streeti").style.display = "block";
+
+        }
+    </script>
+
+<input type = "button" value = "Submit Order" onclick = "verify()"/>
+
+<script language = 'javascript'>
+   function verify() {
+       verifystr = "";
+       lastn = document.querySelector('input[name=lname]').value;
+       if (lastn == "") {
+           verifystr += "Please enter a last name.\n";
+       }
+       phonen = document.querySelector('input[name=phone]').value;
+       var phonev = false;
+       for (i = 0; i < phonen.length; i++) {
+               if (isNaN(phonen[i])) {
+                   
+                   if (phonen[i] == '(') {
+                       if (i != 0) {
+                           phonev = false;
+                           break;
+                       }
+                   }
+                   if (phonen[i] == ')'){
+                       if (i != 4) {
+                           phonev = false;
+                           break
+                       }
+                   }
+                   
+                   if (phonen[i] == '-') {
+                       if ((i != 3) && (i != 7) && (i != 8)) {
+                           phonev = false;
+                           break;
+                       }
+                   }
+                   
+               } else {
+                   phonev = true;
+               }
+        }
+       if ((phonen[0] == '(') && (phonen.length != 13)) {
+           phonev = false;
+       } 
+       if ((phonen[3] == '-') && (phonen.length != 12)){
+           phonev = false;
+       } 
+       if (((phonen[3] != '-') && (phonen[0] != '(')) && (phonen.length != 10)) {
+           phonev = false;
+       }
+       
+       if (!phonev) {
+           verifystr += "Number is not in correct format.\n"
+       }
+       
+       rslt_str = "Thank you for your order!\n\n";
+       pdval = document.querySelector('input[name=p_or_d]:checked').value;
+       if (pdval == "pickup") {
+           rslt_str += "\n"
+       } else if (pdval == "delivery") {
+           if ((document.getElementById("streeti").value == "") || (document.getElementById("cityi").value == "")) {
+               verifystr += "Street and city required for delivery.\n";
+           } else {
+               rslt_str += "\n30 minutes until order is delivered!";
+           }
+       } else {
+           verifystr += "Must select pickup or delivery.\n";
+       }
+             
+       if (verifystr != "") {
+           alert(verifystr);
+       } else {
+           newWindow = window.open("", "", "");
+	   newWindow.document.write(rslt_str);
+       }
+   }
+</script>
+    
+</form>
+</body>
+<footer>
+    <p> CS20 Midterm Fall 2021: Tommy Nguyen, Rose O'Neal, Alex Jeon, Alex Liu </p>
+</footer>
+</html>

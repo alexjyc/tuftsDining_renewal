@@ -1,0 +1,139 @@
+<html>
+<head>
+    <title>Tufts Dining</title>
+    <link rel="stylesheet" href="https://hnguye18.github.io/midterm/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="description" content="Tufts Dining">
+    <meta name="keywords" content="Food, Delivery, Pickup, Tufts">
+    <meta name="author" content="Alex Liu, Alex Jeon, Rose O'Neal, Tommy Nguyen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .bgImage {
+             background-image: url(mainphoto.jpg);
+             width: 100%;
+             height: calc((100vw) * 0.33);
+             background-size: 100% 100%;
+             background-repeat: no-repeat;
+             opacity: 0;
+        }
+        .curb {
+             border-radius: 50px; 
+             background-color: #04AA6D;
+             border: none;
+             color: #FFFFFF;
+             padding: 20px;
+             text-align: center;
+             text-decoration: none;
+             display: block;
+             font-size: 16px;
+             margin: auto;
+             top: 50%;
+        }
+        .homebtn {
+            width: 100%;
+            height: 10%;
+            padding-top: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flex-content {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .flex-content-child {
+            flex: 1;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 20px;
+            color: #000000;
+            text-align: center;
+        }
+        .slogan {
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href = "https://hnguye18.github.io/midterm/index.html">
+            <img src="dining-logo.svg">
+            </a>
+    </header>
+    <nav>
+        <div class="flex-container">
+            <div class="flex-child">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="flex-child">
+                <a href="ourteam.html">Our Team</a>
+            </div>
+            <div class="flex-child">
+                <a href="carm.html">Carmichael</a>
+            </div>
+            <div class="flex-child">
+                <a href="dewick.html">Dewick MacPhie</a>
+            </div>
+            <div class="flex-child">
+                <a href="mobileorder.html">Mobile Order</a>
+            </div>
+            <div class="flex-child">
+                <a href="map.html">Map</a>
+            </div>
+            <div class="flex-child">
+                <a href="nutrition.html">Nutrition</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="bgImage">
+    <div class="homebtn">
+        <form action="https://hnguye18.github.io/midterm/mobileorder.html" method="get" target="_blank">
+            <button class= "curb" type="submit">Curb your hunger</button>
+        </form>
+    </div>
+    </div>
+    <div class="slogan">
+        <h1>Welcome to Tufts Dining!</h1>
+    </div>
+    <div class="flex-content">
+        <div class="flex-content-child">
+            <img src="carm.jpg">
+        </div>
+        <div class="flex-content-child">
+            <img src="dewick.jpg">
+        </div>
+    </div>
+    
+    <div class="flex-content">
+        <div class="flex-content-child">
+            <b>Carmichael Hall:</b><br>
+            Come explore our new menu!<br>
+            <div class="dining-hall-link">
+                <form action="https://hnguye18.github.io/midterm/carm.html" method="get" target="_blank">
+                <button type="submit">learn more</button>
+                </form>
+            </div>
+        </div>
+        <div class="flex-content-child">
+            <b>DeWick MacPhie:</b><br>
+            Try your favorite classics. <br>
+            <div class="dining-hall-link">
+                <form action="https://hnguye18.github.io/midterm/dewick.html" method="get" target="_blank">
+                <button type="submit">learn more</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        
+    <script language="javascript">
+        $('div.bgImage').animate({ opacity: 1 }, { duration: 3000 });
+    </script>
+    
+</body>
+<footer>
+    <p> CS20 Midterm Fall 2021: Tommy Nguyen, Rose O'Neal, Alex Jeon, Alex Liu </p>
+</footer>
+</html>
